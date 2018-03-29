@@ -1,0 +1,57 @@
+INFO:scrapy.utils.log:Scrapy 1.5.0 started (bot: scrapytest)
+INFO:scrapy.utils.log:Versions: lxml 4.1.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 18:41:36) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.2.1, Platform Windows-7-6.1.7601-SP1
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'scrapytest', 'CONCURRENT_ITEMS': 50, 'DOWNLOAD_DELAY': 3, 'DOWNLOAD_TIMEOUT': 15, 'NEWSPIDER_MODULE': 'scrapytest.spiders', 'RETRY_ENABLED': False, 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['scrapytest.spiders']}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapytest.middlewares.MyRandomProxyMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapytest.middlewares.MyRandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/robots.txt> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <POST http://music.163.com/weapi/v1/resource/comments/R_SO_4_419837239?csrf_token=> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <POST http://music.163.com/weapi/v1/resource/comments/R_SO_4_27406244?csrf_token=> (referer: http://music.163.com/) ['partial']
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 1,
+ 'downloader/request_bytes': 3140,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 11316,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 3, 29, 11, 29, 10, 675978),
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 7,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2018, 3, 29, 11, 28, 44, 597487)}
+INFO:scrapy.core.engine:Spider closed (finished)
