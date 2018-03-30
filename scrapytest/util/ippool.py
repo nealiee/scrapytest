@@ -22,7 +22,6 @@ class SaveIpThread(threading.Thread):
         self.func = func
 
     def run(self):
-        lock = 'lock{}'.format(threading.get_ident())
         while 1:
             threads = []
             iplist = func()
@@ -37,6 +36,9 @@ class SaveIpThread(threading.Thread):
                 #     pprint(valid_iplist)
                 #     DBOperation(iplist=valid_iplist).save()
             print('DONE')
+            lock.acquire()
+            DBOperation().del_invalidip()
+            lock.release()
             sleep(300)
 
 
@@ -62,9 +64,11 @@ class VerifyUrlAndSave(threading.Thread):
                     if 'origin' in text.keys():
                         ip2 = text['origin']
                     if ip1 == ip2:
-                        lock.acquire()
-                        DBOperation(ip=ip, type=type)._save()
-                        lock.release()
+                        response1 = requests.get(POINT_URL, headers=HEADER, proxies={type: ip}, timeout=15)
+                        if response1.status_code == 200:
+                            lock.acquire()
+                            DBOperation(ip=ip, type=type)._save()
+                            lock.release()
             except Exception as e:
                 pass
         else:
@@ -95,6 +99,12 @@ class DBOperation(object):
         if res:
             return False
         return True
+
+    def del_invalidip(self):
+        db = DataBase()
+        sql = "delete from ip_pool where err_time>=2 and insert_time<datetime('now', '-1 hour', 'localtime')"
+        db.idu(sql)
+        db.close()
 
     def select_validiplist(self):
         db = DataBase()

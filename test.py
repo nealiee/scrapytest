@@ -1,6 +1,7 @@
 import json
 import logging
 import random
+import string
 import threading
 import time
 from queue import Queue
@@ -31,14 +32,8 @@ from scrapytest.util.ippool import DBOperation
 
 
 
-d = DBOperation(type='http')
-res = d.select_validiplist()
-if res:
-    print(random.choice(res))
-
-ip = 'https://14.118.252.110:6666'
-d1 = DBOperation(ip=ip, lock=threading.Lock())
-d1.update_errtime()
+for i in string.ascii_uppercase:
+    print(ord(i))
 
 # def test(a, b, i='a', *c, **d):
 #     print('a= ', a)

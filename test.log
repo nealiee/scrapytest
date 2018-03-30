@@ -31,27 +31,12 @@ INFO:scrapy.core.engine:Spider opened
 INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
 DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
 DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/robots.txt> (referer: http://music.163.com/)
-DEBUG:scrapy.core.engine:Crawled (200) <POST http://music.163.com/weapi/v1/resource/comments/R_SO_4_419837239?csrf_token=> (referer: http://music.163.com/)
-DEBUG:scrapy.core.engine:Crawled (200) <POST http://music.163.com/weapi/v1/resource/comments/R_SO_4_27406244?csrf_token=> (referer: http://music.163.com/) ['partial']
-INFO:scrapy.core.engine:Closing spider (finished)
-INFO:scrapy.statscollectors:Dumping Scrapy stats:
-{'downloader/exception_count': 1,
- 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 1,
- 'downloader/request_bytes': 3140,
- 'downloader/request_count': 4,
- 'downloader/request_method_count/GET': 1,
- 'downloader/request_method_count/POST': 3,
- 'downloader/response_bytes': 11316,
- 'downloader/response_count': 3,
- 'downloader/response_status_count/200': 3,
- 'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2018, 3, 29, 11, 29, 10, 675978),
- 'log_count/DEBUG': 4,
- 'log_count/INFO': 7,
- 'response_received_count': 3,
- 'scheduler/dequeued': 3,
- 'scheduler/dequeued/memory': 3,
- 'scheduler/enqueued': 3,
- 'scheduler/enqueued/memory': 3,
- 'start_time': datetime.datetime(2018, 3, 29, 11, 28, 44, 597487)}
-INFO:scrapy.core.engine:Spider closed (finished)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/discover/artist/cat?id=1001&initial=-1> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/artist?id=6452> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/artist?id=3691> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/artist?id=6454> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/artist?id=6472> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/artist?id=2849> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/artist?id=6462> (referer: http://music.163.com/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://music.163.com/artist?id=5768> (referer: http://music.163.com/)
+INFO:scrapy.extensions.logstats:Crawled 9 pages (at 9 pages/min), scraped 0 items (at 0 items/min)
