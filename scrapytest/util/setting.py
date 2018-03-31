@@ -6,4 +6,4 @@ POINT_URL = 'http://music.163.com'
 HTTPS_VERIFY_URL = 'https://httpbin.org/ip'
 HTTP_VERIFY_URL = 'http://httpbin.org/ip'
 
-SQLITE_DBNAME = r'C:\Users\Administrator\Desktop\python\workspace\mySqlite3'
+SQLITE_DBNAME = r'D:\workspace\mySqlite3'

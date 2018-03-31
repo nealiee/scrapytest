@@ -31,10 +31,6 @@ class SaveIpThread(threading.Thread):
                 t.start()
             for t in threads:
                 t.join()
-                # valid_iplist = VerifyUrl(iplist, lock).verify()
-                # if valid_iplist:
-                #     pprint(valid_iplist)
-                #     DBOperation(iplist=valid_iplist).save()
             print('DONE')
             lock.acquire()
             DBOperation().del_invalidip()
